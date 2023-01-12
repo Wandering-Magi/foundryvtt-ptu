@@ -1,0 +1,34 @@
+{
+  "id": "ptu",
+  "title": "Pokemon Tabletop United",
+  "description": "The Pokemon Tabletop United system for FoundryVTT!",
+  "version": "0.1.0",
+  "compatibility": {
+    "minimum": 10,
+    "verified": "10.287",
+    "maximum": 10
+  },
+  "authors": [{
+    "name": "Wandering Magi"
+  }],
+  "esmodules": ["module/ptu.mjs"],
+  "styles": ["css/ptu.css"],
+  "scripts": [],
+  "packs": [],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "gridDistance": 1,
+  "gridUnits": "m",
+  "primaryTokenAttribute": "health",
+  "secondaryTokenAttribute": null,
+  "url": "",
+  "manifest": "",
+  "download": "",
+  "license": "LICENSE.txt",
+  "changelog": "CHANGELOG.md"
+}

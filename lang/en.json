@@ -1,0 +1,22 @@
+{
+  "PTU.AbilityStr": "Strength",
+  "PTU.AbilityCon": "Constitution",
+  "PTU.AbilityDex": "Dexterity",
+  "PTU.AbilityInt": "Intelligence",
+  "PTU.AbilityWis": "Wisdom",
+  "PTU.AbilityCha": "Charisma",
+
+  "PTU.AbilityStrAbbr": "str",
+  "PTU.AbilityConAbbr": "con",
+  "PTU.AbilityDexAbbr": "dex",
+  "PTU.AbilityIntAbbr": "int",
+  "PTU.AbilityWisAbbr": "wis",
+  "PTU.AbilityChaAbbr": "cha",
+
+  "PTU.EffectCreate": "Create Effect",
+  "PTU.EffectToggle": "Toggle Effect",
+  "PTU.EffectEdit": "Edit Effect",
+  "PTU.EffectDelete": "Delete Effect",
+
+  "PTU.Add": "Add"
+}
