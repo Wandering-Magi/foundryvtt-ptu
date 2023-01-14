@@ -8,9 +8,11 @@
     "verified": "10.287",
     "maximum": 10
   },
-  "authors": [{
-    "name": "Wandering Magi"
-  }],
+  "authors": [
+    {
+      "name": "Wandering Magi"
+    }
+  ],
   "esmodules": ["module/ptu.mjs"],
   "styles": ["css/ptu.css"],
   "scripts": [],

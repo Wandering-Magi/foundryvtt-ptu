@@ -1,25 +1,33 @@
-import {onManageActiveEffect, prepareActiveEffectCategories} from "../helpers/effects.mjs";
+import {
+  onManageActiveEffect,
+  prepareActiveEffectCategories,
+} from '../helpers/effects.mjs';
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
 export class PTUActorSheet extends ActorSheet {
-
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["ptu", "sheet", "actor"],
-      template: "systems/ptu/templates/actor/actor-sheet.html",
+      classes: ['ptu', 'sheet', 'actor'],
+      template: 'systems/ptu/templates/actor/actor-sheet.html',
       width: 600,
-      height: 600,
-      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "features" }]
+      height: 770,
+      tabs: [
+        {
+          navSelector: '.sheet-navigation',
+          contentSelector: '.primary-body',
+          initial: 'trainer',
+        },
+      ],
     });
   }
 
   /** @override */
   get template() {
-    return `systems/ptu/templates/actor/actor-${this.actor.type}-sheet.html`;
+    return `systems/ptu/templates/actor/actor-${this.actor.type}-sheet.hbs`;
   }
 
   /* -------------------------------------------- */
@@ -94,7 +102,7 @@ export class PTUActorSheet extends ActorSheet {
       6: [],
       7: [],
       8: [],
-      9: []
+      9: [],
     };
 
     // Iterate through items, allocating to containers
@@ -129,9 +137,9 @@ export class PTUActorSheet extends ActorSheet {
     super.activateListeners(html);
 
     // Render the item sheet for viewing/editing prior to the editable check.
-    html.find('.item-edit').click(ev => {
-      const li = $(ev.currentTarget).parents(".item");
-      const item = this.actor.items.get(li.data("itemId"));
+    html.find('.item-edit').click((ev) => {
+      const li = $(ev.currentTarget).parents('.item');
+      const item = this.actor.items.get(li.data('itemId'));
       item.sheet.render(true);
     });
 
@@ -143,26 +151,28 @@ export class PTUActorSheet extends ActorSheet {
     html.find('.item-create').click(this._onItemCreate.bind(this));
 
     // Delete Inventory Item
-    html.find('.item-delete').click(ev => {
-      const li = $(ev.currentTarget).parents(".item");
-      const item = this.actor.items.get(li.data("itemId"));
+    html.find('.item-delete').click((ev) => {
+      const li = $(ev.currentTarget).parents('.item');
+      const item = this.actor.items.get(li.data('itemId'));
       item.delete();
       li.slideUp(200, () => this.render(false));
     });
 
     // Active Effect management
-    html.find(".effect-control").click(ev => onManageActiveEffect(ev, this.actor));
+    html
+      .find('.effect-control')
+      .click((ev) => onManageActiveEffect(ev, this.actor));
 
     // Rollable abilities.
     html.find('.rollable').click(this._onRoll.bind(this));
 
     // Drag events for macros.
     if (this.actor.isOwner) {
-      let handler = ev => this._onDragStart(ev);
+      let handler = (ev) => this._onDragStart(ev);
       html.find('li.item').each((i, li) => {
-        if (li.classList.contains("inventory-header")) return;
-        li.setAttribute("draggable", true);
-        li.addEventListener("dragstart", handler, false);
+        if (li.classList.contains('inventory-header')) return;
+        li.setAttribute('draggable', true);
+        li.addEventListener('dragstart', handler, false);
       });
     }
   }
@@ -185,13 +195,13 @@ export class PTUActorSheet extends ActorSheet {
     const itemData = {
       name: name,
       type: type,
-      system: data
+      system: data,
     };
     // Remove the type from the dataset since it's in the itemData.type prop.
-    delete itemData.system["type"];
+    delete itemData.system['type'];
 
     // Finally, create the item!
-    return await Item.create(itemData, {parent: this.actor});
+    return await Item.create(itemData, { parent: this.actor });
   }
 
   /**
@@ -226,4 +236,15 @@ export class PTUActorSheet extends ActorSheet {
     }
   }
 
+  _moveTooltips(e2) {
+    const t2 = $(e2.currentTarget),
+      s2 = e2.clientX,
+      l2 = e2.clientY + 24;
+    t2.find('.tooltip:hover .tooltipcontent')
+      .css('left', `${s2}px`)
+      .css('top', `${l2}px`);
+  }
+  activateListeners(e2) {
+    super.activateListeners(e2), e2.mousemove((e3) => this._moveTooltips(e3));
+  }
 }

@@ -3,7 +3,6 @@
  * @extends {Actor}
  */
 export class PTUActor extends Actor {
-
   /** @override */
   prepareData() {
     // Prepare data for the actor. Calling the super version of this executes
@@ -35,23 +34,60 @@ export class PTUActor extends Actor {
 
     // Make separate methods for each Actor type (character, npc, etc.) to keep
     // things organized.
-    this._prepareCharacterData(actorData);
-    this._prepareNpcData(actorData);
+    this._prepareTrainerData(actorData);
+    //this._prepareNpcData(actorData);
   }
 
   /**
    * Prepare Character type specific data
    */
-  _prepareCharacterData(actorData) {
-    if (actorData.type !== 'character') return;
+  _prepareTrainerData(actorData) {
+    if (actorData.type !== 'trainer') return;
 
     // Make modifications to data here. For example:
     const systemData = actorData.system;
 
-    // Loop through ability scores, and add their modifiers to our sheet output.
-    for (let [key, ability] of Object.entries(systemData.abilities)) {
-      // Calculate the modifier using d20 rules.
-      ability.mod = Math.floor((ability.value - 10) / 2);
+    // Loop through ability scores, and add their totals and CS adjusted to our sheet output.
+    for (let [key, ability] of Object.entries(systemData.stats)) {
+      // Calculate the ability total
+      ability.total =
+        ability.base + ability.feats + ability.bonus + ability.level;
+      const stageMod =
+        ability.stage >= 0 ? 1 + ability.stage * 0.2 : 1 + ability.stage * 0.1;
+      ability.value = Math.max(1, ability.total * stageMod);
+      //console.log(key, ability);
+
+      // while making adjustments to hp, modify actor max/injured health
+      if (key === 'hp') {
+        const level = 1;
+        systemData.hitpoints.max = Math.trunc(
+          (level * 2 + ability.adjusted * 3 + 10) *
+            (1 - systemData.hitpoints.injuries / 10)
+        );
+      }
+
+      // calculate evasion for (s)def and speed
+
+      // adjust movement values by speed cs
+    }
+
+    // skill management
+    for (let [key, skill] of Object.entries(systemData.skills)) {
+      const skillRank = [
+        null,
+        'Pathetic',
+        'Untrained',
+        'Novice',
+        'Adept',
+        'Expert',
+        'Master',
+      ];
+      // roll format of "Nd6 + M"
+      skill.value = skill.value > 6 ? 6 : skill.value;
+      skill.roll = `${skill.value}d6${
+        skill.modifier != '' ? '+' + skill.modifier : ''
+      }`;
+      skill.rank = skillRank[skill.value];
     }
   }
 
@@ -63,7 +99,7 @@ export class PTUActor extends Actor {
 
     // Make modifications to data here. For example:
     const systemData = actorData.system;
-    systemData.xp = (systemData.cr * systemData.cr) * 100;
+    systemData.xp = systemData.cr * systemData.cr * 100;
   }
 
   /**
@@ -107,5 +143,4 @@ export class PTUActor extends Actor {
 
     // Process additional NPC data here.
   }
-
 }

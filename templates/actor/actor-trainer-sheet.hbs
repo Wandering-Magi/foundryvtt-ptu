@@ -1,0 +1,25 @@
+<form class="{{cssClass}} {{actor.type}}" autocomplete="off">
+
+    {{!-- Trainer Sheet Navigation --}}
+    <nav class="sheet-navigation tabs" data-group="primary">
+        <a class="item" data-tab="trainer" data-group="primary">{{ localize "PTU.Trainer"}}</a>
+        <a class="item" data-tab="summary" data-group="primary">{{ localize "PTU.Summary"}}</a>
+        <a class="item" data-tab="abilities" data-group="primary">{{ localize "PTU.Abilities"}}</a>
+        <a class="item" data-tab="inventory" data-group="primary">{{ localize "PTU.Inventory"}}</a>
+        <a class="item" data-tab="combat" data-group="primary">{{ localize "PTU.Combat"}}</a>
+        <a class="item" data-tab="notes" data-group="primary">{{ localize "PTU.Notes"}}</a>
+    </nav>
+
+    <section class="primary-body">
+
+        {{!-- Details --}}
+        <div class="tab summary" data-group="primary" data-tab="summary">
+            <div class="header-stats">
+                {{> "systems/ptu/templates/actor/parts/actor-stats.hbs"}}
+            </div>
+            <div class="header-skills">
+                {{> "systems/ptu/templates/actor/parts/actor-skills.hbs"}}
+            </div>
+        </div>
+    </section>
+</form>

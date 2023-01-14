@@ -1,0 +1,40 @@
+<ul class='skills-list'>
+  {{#each system.skills as |skill name|}}
+    <li class='skill' data-skill='{{name}}' group-type='{{skill.group}}'>
+      <div class='skill-name tooltip'>
+        <span class='tooltipcontent'>
+          Group :
+          {{skill.group}}<br /><br />
+          @skills.{{name}}.roll :
+          {{skill.roll}}
+        </span>
+        <h4>{{skill.label}}</h4>
+      </div>
+      <input
+        type='text'
+        value='{{skill.modifier}}'
+        class='text-box skill-modifier'
+        name='system.skills.{{name}}.modifier'
+        data-type='String'
+        title='{{localize "PTU.SkillModifier"}}'
+      />
+      <div class='skill-rank' title='{{localize "PTU.SkillRank"}}'>
+        {{skill.rank}}
+      </div>
+      <input
+        type='text'
+        value='{{skill.value}}'
+        class='text-box skill-value'
+        name='system.skills.{{name}}.value'
+        data-type='Number'
+        title='{{localize "PTU.SkillValue"}}'
+      />
+      <div class='skill-roll' title='{{localize "PTU.SkillRoll"}}'>
+        {{skill.roll}}
+      </div>
+      <div>
+        {{! Roll Button goes here }}
+      </div>
+    </li>
+  {{/each}}
+</ul>

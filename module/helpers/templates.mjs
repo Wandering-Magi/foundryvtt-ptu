@@ -3,13 +3,15 @@
  * Pre-loaded templates are compiled and cached for fast access when rendering
  * @return {Promise}
  */
- export const preloadHandlebarsTemplates = async function() {
+export const preloadHandlebarsTemplates = async function () {
   return loadTemplates([
-
     // Actor partials.
-    "systems/ptu/templates/actor/parts/actor-features.html",
-    "systems/ptu/templates/actor/parts/actor-items.html",
-    "systems/ptu/templates/actor/parts/actor-spells.html",
-    "systems/ptu/templates/actor/parts/actor-effects.html",
+    'systems/ptu/templates/actor/parts/actor-summary.hbs',
+    'systems/ptu/templates/actor/parts/actor-skills.hbs',
+    'systems/ptu/templates/actor/parts/actor-stats.hbs',
+    //"systems/ptu/templates/actor/parts/actor-features.html",
+    //"systems/ptu/templates/actor/parts/actor-items.html",
+    //"systems/ptu/templates/actor/parts/actor-spells.html",
+    //"systems/ptu/templates/actor/parts/actor-effects.html",
   ]);
 };

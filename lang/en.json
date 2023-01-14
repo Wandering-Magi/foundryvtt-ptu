@@ -1,22 +1,26 @@
 {
-  "PTU.AbilityStr": "Strength",
-  "PTU.AbilityCon": "Constitution",
-  "PTU.AbilityDex": "Dexterity",
-  "PTU.AbilityInt": "Intelligence",
-  "PTU.AbilityWis": "Wisdom",
-  "PTU.AbilityCha": "Charisma",
+  "PTU.Trainer": "Trainer",
+  "PTU.TrainerName": "Trainer Name",
+  "PTU.Level": "Level",
 
-  "PTU.AbilityStrAbbr": "str",
-  "PTU.AbilityConAbbr": "con",
-  "PTU.AbilityDexAbbr": "dex",
-  "PTU.AbilityIntAbbr": "int",
-  "PTU.AbilityWisAbbr": "wis",
-  "PTU.AbilityChaAbbr": "cha",
+  "PTU.Summary": "Summary",
+  "PTU.Abilities": "Abilities",
+  "PTU.Inventory": "Inventory",
+  "PTU.Skills": "Skills",
+  "PTU.Combat": "Combat",
+  "PTU.Notes": "Notes",
 
-  "PTU.EffectCreate": "Create Effect",
-  "PTU.EffectToggle": "Toggle Effect",
-  "PTU.EffectEdit": "Edit Effect",
-  "PTU.EffectDelete": "Delete Effect",
+  "PTU.Features": "Features",
+  "PTU.Edges": "Edges",
+
+  "PTU.SkillValue": "Skill Value",
+  "PTU.SkillRank": "Skill Rank",
+  "PTU.SkillModifier": "Skill Modifier",
+  "PTU.SkillRoll": "Skill Roll",
+
+  "PTU.StatValue": "Stat Value",
+  "PTU.StatFeat": "Stat Features",
+  "PTU.StatLevel": "Stat Level",
 
   "PTU.Add": "Add"
 }

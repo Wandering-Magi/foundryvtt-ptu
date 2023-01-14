@@ -1,0 +1,46 @@
+<div class='summary-header'>
+  {{!--<img
+    class='profile'
+    src='{{actor.img}}'
+    title='{{actor.name}}'
+    data-edit='img'
+  />--}}
+
+  <div class='flexcol'>
+    <div class='name'>
+      <div>
+        <h1 class='trainerName'>
+          <input
+            name='name'
+            type='text'
+            value='{{actor.name}}'
+            placeholder='{{localize "PTU.TrainerName"}}'
+            title='{{localize "PTU.TrainerName"}}'
+          />
+        </h1>
+      </div>
+
+      <div class='trainerLevel trainer tooltip'>
+        <span class='tooltipcontent'>
+          @level.value :
+          {{system.level.value}}
+        </span>
+
+        <table>
+          <thead>
+            <tr>
+              <th class='level'>{{localize 'PTU.Level'}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class='level'>
+                {{system.level.value}}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
