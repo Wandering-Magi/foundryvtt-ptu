@@ -3,6 +3,13 @@
  * @extends {Actor}
  */
 export class PTUActor extends Actor {
+  _preCreate(data, options, user) {
+    super._preCreate(data, options, user);
+    this.updateSource({
+      'system.details.trainerID': Math.floor(Math.random(1e6) * 1e6),
+    });
+  }
+
   /** @override */
   prepareData() {
     // Prepare data for the actor. Calling the super version of this executes
@@ -55,13 +62,12 @@ export class PTUActor extends Actor {
       const stageMod =
         ability.stage >= 0 ? 1 + ability.stage * 0.2 : 1 + ability.stage * 0.1;
       ability.value = Math.max(1, ability.total * stageMod);
-      //console.log(key, ability);
 
       // while making adjustments to hp, modify actor max/injured health
       if (key === 'hp') {
-        const level = 1;
+        const level = systemData.level.value;
         systemData.hitpoints.max = Math.trunc(
-          (level * 2 + ability.adjusted * 3 + 10) *
+          (level * 2 + ability.value * 3 + 10) *
             (1 - systemData.hitpoints.injuries / 10)
         );
       }

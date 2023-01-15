@@ -1,3 +1,7 @@
+.combat-stats {
+  max-width: 330px;
+}
+
 ul.stats-list {
   list-style: none;
   margin: 0;
@@ -18,7 +22,7 @@ ul.stats-list {
   li.stat {
     padding-left: 0.3em;
     display: grid;
-    grid-template-columns: auto repeat(5, 4em) 40px;
+    grid-template-columns: auto repeat(5, 4em) 3px;
     align-items: center;
     height: 2em;
     background-color: #9b9b9b33;
@@ -53,6 +57,15 @@ ul.stats-list {
 
     .stat-baseStat,
     .stat-bonus {
+      text-align: center;
+    }
+
+    .head-name,
+    .head-baseStat,
+    .head-feats,
+    .head-bonus,
+    .head-level,
+    .head-total {
       text-align: center;
     }
   }

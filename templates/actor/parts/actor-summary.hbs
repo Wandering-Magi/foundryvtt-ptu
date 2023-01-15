@@ -1,46 +1,13 @@
-<div class='summary-header'>
-  {{!--<img
-    class='profile'
-    src='{{actor.img}}'
-    title='{{actor.name}}'
-    data-edit='img'
-  />--}}
-
-  <div class='flexcol'>
-    <div class='name'>
-      <div>
-        <h1 class='trainerName'>
-          <input
-            name='name'
-            type='text'
-            value='{{actor.name}}'
-            placeholder='{{localize "PTU.TrainerName"}}'
-            title='{{localize "PTU.TrainerName"}}'
-          />
-        </h1>
-      </div>
-
-      <div class='trainerLevel trainer tooltip'>
-        <span class='tooltipcontent'>
-          @level.value :
-          {{system.level.value}}
-        </span>
-
-        <table>
-          <thead>
-            <tr>
-              <th class='level'>{{localize 'PTU.Level'}}</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class='level'>
-                {{system.level.value}}
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+<div class="flexcol summary-header">
+  <section class="stats flexrow">
+    <div class="combat-stats">
+      {{> "systems/ptu/templates/actor/parts/actor-stats-combat.hbs"}}
     </div>
-  </div>
+    <div class="derived-stats">
+      {{> "systems/ptu/templates/actor/parts/actor-stats-derived.hbs"}}
+    </div>
+  </section>
+  <section class="skills">
+    {{> "systems/ptu/templates/actor/parts/actor-skills.hbs"}}
+  </section>
 </div>

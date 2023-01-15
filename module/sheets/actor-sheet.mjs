@@ -132,8 +132,20 @@ export class PTUActorSheet extends ActorSheet {
 
   /* -------------------------------------------- */
 
+  _moveTooltips(e2) {
+    const t2 = $(e2.currentTarget),
+      s2 = e2.clientX,
+      l2 = e2.clientY + 24;
+    t2.find('.tooltip:hover .tooltipcontent')
+      .css('left', `${s2}px`)
+      .css('top', `${l2}px`);
+  }
+
   /** @override */
   activateListeners(html) {
+    super.activateListeners(html),
+      html.mousemove((e3) => this._moveTooltips(e3));
+
     super.activateListeners(html);
 
     // Render the item sheet for viewing/editing prior to the editable check.
@@ -234,17 +246,5 @@ export class PTUActorSheet extends ActorSheet {
       });
       return roll;
     }
-  }
-
-  _moveTooltips(e2) {
-    const t2 = $(e2.currentTarget),
-      s2 = e2.clientX,
-      l2 = e2.clientY + 24;
-    t2.find('.tooltip:hover .tooltipcontent')
-      .css('left', `${s2}px`)
-      .css('top', `${l2}px`);
-  }
-  activateListeners(e2) {
-    super.activateListeners(e2), e2.mousemove((e3) => this._moveTooltips(e3));
   }
 }

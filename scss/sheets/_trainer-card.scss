@@ -1,0 +1,29 @@
+.trainer-card {
+  background: no-repeat url('../image/Pokecard.png');
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 531px;
+  min-height: 327px;
+
+  ul.trainer-info {
+    width: 344px;
+    list-style: none;
+
+    li {
+      background-color: aqua;
+      display: inline-flex;
+    }
+  }
+
+  img.trainer-picture {
+    height: 281px;
+    width: 167px;
+    margin-right: 14px;
+    margin-top: 30px;
+    margin-bottom: 16px;
+  }
+}

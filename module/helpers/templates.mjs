@@ -8,10 +8,8 @@ export const preloadHandlebarsTemplates = async function () {
     // Actor partials.
     'systems/ptu/templates/actor/parts/actor-summary.hbs',
     'systems/ptu/templates/actor/parts/actor-skills.hbs',
-    'systems/ptu/templates/actor/parts/actor-stats.hbs',
-    //"systems/ptu/templates/actor/parts/actor-features.html",
-    //"systems/ptu/templates/actor/parts/actor-items.html",
-    //"systems/ptu/templates/actor/parts/actor-spells.html",
-    //"systems/ptu/templates/actor/parts/actor-effects.html",
+    'systems/ptu/templates/actor/parts/actor-stats-combat.hbs',
+    'systems/ptu/templates/actor/parts/actor-stats-derived.hbs',
+    'systems/ptu/templates/actor/parts/actor-trainer.hbs',
   ]);
 };

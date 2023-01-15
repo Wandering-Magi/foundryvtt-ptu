@@ -1,7 +1,16 @@
 .window-app {
-  font-family: fot-udkakugoc80-pro, sans-serif;
+  font-family: $font-primary;
   font-style: normal;
   font-weight: 700;
+}
+
+.window-content {
+  overflow: hidden;
+
+  form {
+    overflow: hidden;
+    height: 100%;
+  }
 }
 
 .rollable {

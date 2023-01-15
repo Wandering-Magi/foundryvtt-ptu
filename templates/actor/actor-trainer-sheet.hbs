@@ -13,12 +13,12 @@
     <section class="primary-body">
 
         {{!-- Details --}}
+        <div class="tab trainer" data-group="primary" data-tab="trainer">
+            {{> "systems/ptu/templates/actor/parts/actor-trainer.hbs"}}
+        </div>
         <div class="tab summary" data-group="primary" data-tab="summary">
-            <div class="header-stats">
-                {{> "systems/ptu/templates/actor/parts/actor-stats.hbs"}}
-            </div>
-            <div class="header-skills">
-                {{> "systems/ptu/templates/actor/parts/actor-skills.hbs"}}
+            <div class="header-summary">
+                {{> "systems/ptu/templates/actor/parts/actor-summary.hbs"}}
             </div>
         </div>
     </section>

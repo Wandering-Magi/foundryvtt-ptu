@@ -60,5 +60,23 @@ ul.skills-list {
       height: auto;
       text-align: center;
     }
+
+    .rollable {
+      align-items: center;
+
+      img:hover {
+        animation: dice-spin 0.25s cubic-bezier(0.6, -0.28, 0.735, 0.045) 1
+          forwards;
+        transform-origin: 50% 40%;
+        filter: invert(16%) sepia(51.5%) saturate(4012%) hue-rotate(345deg)
+          brightness(100%) contrast(86%);
+      }
+      img {
+        opacity: 60;
+        width: 24px;
+        height: 24px;
+        border: unset;
+      }
+    }
   }
 }

@@ -21,9 +21,14 @@
   @import 'components/effects';
 }
 .ptu.sheet {
+  @import 'sheets/primary-body';
   @import 'sheets/navigation';
 }
 .ptu.sheet.actor {
+  min-width: 480px;
+  min-height: 770px;
+  @import 'sheets/tabs';
   @import 'sheets/skills';
   @import 'sheets/stats';
+  @import 'sheets/trainer-card';
 }
