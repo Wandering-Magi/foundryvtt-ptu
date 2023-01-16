@@ -1,29 +1,95 @@
 .trainer-card {
-  background: no-repeat url('../image/Pokecard.png');
-  display: inline-flex;
+  background: no-repeat url('../image/Trainer-Card/maroon.svg');
+  max-width: 510px;
+  min-height: 315px;
+  display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
-  align-content: center;
   justify-content: space-between;
-  align-items: center;
-  max-width: 531px;
-  min-height: 327px;
 
   ul.trainer-info {
-    width: 344px;
+    width: 250px;
     list-style: none;
+    li.trainer-name .trainer-info-field {
+      margin-top: 40px;
+    }
+    li div.trainer-info-field {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+  div.trainer-info-field {
+    background-color: #c0c0c0cc;
+    margin-top: 3px;
+    height: 20px;
+    border-radius: 3px;
+    border-bottom-style: double;
+    border-bottom-width: 4px;
 
-    li {
-      background-color: aqua;
-      display: inline-flex;
+    input[type='text'] {
+      border: none;
+      background: none;
+      text-align: right;
+      font-weight: bold;
+      height: min-content;
     }
   }
 
-  img.trainer-picture {
-    height: 281px;
-    width: 167px;
-    margin-right: 14px;
-    margin-top: 30px;
-    margin-bottom: 16px;
+  li.trainer-bio {
+    display: flex;
+    margin-top: 3px;
+
+    .trainer-bio-field {
+      background-color: #c0c0c0cc;
+      border-radius: 3px;
+      border-bottom-style: double;
+      margin-inline: 1px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .head {
+      background: #cdcdcdcc;
+      width: -webkit-fill-available;
+      text-align: center;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+      border-bottom-style: groove;
+    }
+
+    input[type='text'] {
+      background: none;
+      border: none;
+      text-align: center;
+      height: min-content;
+    }
   }
+
+  .trainer-background {
+    width: 300px;
+    margin-left: 20px;
+  }
+
+  .trainer-stars {
+    margin-right: 14px;
+    margin-top: 3px;
+    height: 25px;
+  }
+  .trainer-star {
+    border: none;
+    height: 30px;
+  }
+
+  img.trainer-picture {
+    height: 270px;
+    width: 160px;
+    margin-right: 14px;
+    border: double;
+    border-color: #a9a9a950;
+    border-radius: 8px;
+  }
+}
+
+.trainer-bio input.text-box {
 }

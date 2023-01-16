@@ -1,0 +1,128 @@
+<section class='trainer-card'>
+  <section class='trainer-info'>
+    <ul class='trainer-info'>
+      <li class='trainer-name'>
+        <div class='trainer-info-field'>
+          <span>Name</span><span><input
+              type='text'
+              value='{{actor.name}}'
+              class='text-box'
+              name='name'
+              data-type='String'
+              placeholder='What is your name?'
+            /></span>
+        </div>
+      </li>
+      <li class='trainer-id'>
+        <div class='trainer-info-field'>
+          <span>ID No.</span><span>{{system.details.trainerID}}</span>
+        </div>
+      </li>
+      <li class='trainer-bio'>
+        <div class='trainer-bio-field'>
+          <div class='head'><span>Sex:</span></div>
+          <span><input
+              type='text'
+              value='{{system.details.sex}}'
+              class='text-box'
+              name='system.details.sex'
+              data-type='String'
+              placeholder='M/F'
+            /></span>
+        </div>
+        <div class='trainer-bio-field'>
+          <span class='head'>Age:</span><span><input
+              type='text'
+              value='{{system.details.age}}'
+              class='text-box'
+              name='system.details.age'
+              data-type='String'
+              placeholder='####'
+            /></span>
+        </div>
+        <div class='trainer-bio-field'>
+          <span class='head'>Weight:</span><span><input
+              type='text'
+              value='{{system.details.weight}}'
+              class='text-box'
+              name='system.details.weight'
+              data-type='String'
+              placeholder='####'
+            /></span>
+        </div>
+        <div class='trainer-bio-field'>
+          <span class='head'>Height:</span><span><input
+              type='text'
+              value='{{system.details.height}}'
+              class='text-box'
+              name='system.details.height'
+              data-type='String'
+              placeholder='####'
+            /></span>
+        </div>
+      </li>
+      <li class='trainer-money'>
+        <div class='trainer-info-field'>
+          <span>Money:</span><span><img
+              class='pokedollar-symbol'
+              src='systems/ptu/image/Pokémon_Dollar_sign.svg'
+              style='border: none; height: 11px'
+            />1,000,000</span>
+        </div>
+      </li>
+      <li class='trainer-pokedex'>
+        <div class='trainer-info-field'>
+          <span>Pokédex|</span>
+          <span>Seen: ###</span>
+          <Span>Caught: ###</Span>
+        </div>
+      </li>
+    </ul>
+    <section>
+      <div class='trainer-background'>
+        <div class='trainer-background-name flexrow trainer-info-field'>
+          <span>Name:</span><input type='text' />
+        </div>
+        <div class='trainer-background-skills flexcol'>
+          <div class='background-skills-up'>
+            <div class='trainer-info-field flexrow'><span>Adept</span><input
+                type='text'
+              /></div>
+            <div class='trainer-info-field flexrow'><span>Novice</span><input
+                type='text'
+              /></div>
+          </div>
+          <div class='background-skills-down flexcol trainer-info-field'>
+            <div class='flexrow'><span>Pathetic</span><input
+                type='text'
+              /></div>
+            <div class='flexrow'><input type='text' /><input
+                type='text'
+              /></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+  <div>
+    <div class='trainer-stars flexrow'>
+      {{#each system.details.stars}}
+        <img
+          class='trainer-star'
+          src='systems/ptu/image/Trainer-Card/trainer-star.svg'
+        />
+      {{/each}}
+    </div>
+    <div class='trainer-picture tooltip'>
+      <span class='tooltipcontent'>
+        {{actor.name}}<br />
+        Src:
+        {{actor.img}}<br /><br />
+        Aspect Ratio: 1.69:1<br />
+        Image size: 270:160
+      </span>
+      <img class='trainer-picture' src='{{actor.img}}' data-edit='img' />
+    </div>
+  </div>
+
+</section>

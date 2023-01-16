@@ -245,7 +245,8 @@
           "milestone": 0,
           "dex": 0,
           "misc": 0
-        }
+        },
+        "star": [1, 2, 3, 4, 5]
       },
       "resources": {
         "ap": {

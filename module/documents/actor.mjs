@@ -7,6 +7,7 @@ export class PTUActor extends Actor {
     super._preCreate(data, options, user);
     this.updateSource({
       'system.details.trainerID': Math.floor(Math.random(1e6) * 1e6),
+      img: 'systems/ptu/image/pikachu-silhouette.svg',
     });
   }
 
@@ -95,6 +96,10 @@ export class PTUActor extends Actor {
       }`;
       skill.rank = skillRank[skill.value];
     }
+
+    // setting stars
+    const stars = Math.ceil(systemData.level.value / 4);
+    systemData.details.stars = new Array(stars).fill(null);
   }
 
   /**
