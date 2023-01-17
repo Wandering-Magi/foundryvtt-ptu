@@ -24,6 +24,17 @@ Hooks.once('init', async function () {
   // Add custom constants for configuration.
   CONFIG.PTU = PTU;
 
+  PTU.trainerCardInfo = [
+    'actor.name',
+    'details.trainerID',
+    'details.age',
+    'details.sex',
+    'details.weight',
+    'details.height',
+    'resources.currency',
+    'pokedex',
+  ];
+
   /**
    * Set an initiative formula for the system
    * @type {String}
@@ -140,5 +151,3 @@ function rollItemMacro(itemUuid) {
     item.roll();
   });
 }
-
-

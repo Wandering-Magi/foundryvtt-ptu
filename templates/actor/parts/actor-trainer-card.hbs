@@ -1,128 +1,286 @@
-<section class='trainer-card'>
-  <section class='trainer-info'>
-    <ul class='trainer-info'>
-      <li class='trainer-name'>
-        <div class='trainer-info-field'>
-          <span>Name</span><span><input
-              type='text'
-              value='{{actor.name}}'
-              class='text-box'
-              name='name'
-              data-type='String'
-              placeholder='What is your name?'
-            /></span>
-        </div>
-      </li>
-      <li class='trainer-id'>
-        <div class='trainer-info-field'>
-          <span>ID No.</span><span>{{system.details.trainerID}}</span>
-        </div>
-      </li>
-      <li class='trainer-bio'>
-        <div class='trainer-bio-field'>
-          <div class='head'><span>Sex:</span></div>
-          <span><input
-              type='text'
-              value='{{system.details.sex}}'
-              class='text-box'
-              name='system.details.sex'
-              data-type='String'
-              placeholder='M/F'
-            /></span>
-        </div>
-        <div class='trainer-bio-field'>
-          <span class='head'>Age:</span><span><input
-              type='text'
-              value='{{system.details.age}}'
-              class='text-box'
-              name='system.details.age'
-              data-type='String'
-              placeholder='####'
-            /></span>
-        </div>
-        <div class='trainer-bio-field'>
-          <span class='head'>Weight:</span><span><input
-              type='text'
-              value='{{system.details.weight}}'
-              class='text-box'
-              name='system.details.weight'
-              data-type='String'
-              placeholder='####'
-            /></span>
-        </div>
-        <div class='trainer-bio-field'>
-          <span class='head'>Height:</span><span><input
-              type='text'
-              value='{{system.details.height}}'
-              class='text-box'
-              name='system.details.height'
-              data-type='String'
-              placeholder='####'
-            /></span>
-        </div>
-      </li>
-      <li class='trainer-money'>
-        <div class='trainer-info-field'>
-          <span>Money:</span><span><img
-              class='pokedollar-symbol'
-              src='systems/ptu/image/Pokémon_Dollar_sign.svg'
-              style='border: none; height: 11px'
-            />1,000,000</span>
-        </div>
-      </li>
-      <li class='trainer-pokedex'>
-        <div class='trainer-info-field'>
-          <span>Pokédex|</span>
-          <span>Seen: ###</span>
-          <Span>Caught: ###</Span>
-        </div>
-      </li>
-    </ul>
-    <section>
-      <div class='trainer-background'>
-        <div class='trainer-background-name flexrow trainer-info-field'>
-          <span>Name:</span><input type='text' />
-        </div>
-        <div class='trainer-background-skills flexcol'>
-          <div class='background-skills-up'>
-            <div class='trainer-info-field flexrow'><span>Adept</span><input
+{{!--<section class='card'>
+  <div class='trainer-card'>
+    <section class='trainer-info'>
+      <ul class='trainer-info'>
+        <li class='trainer-name'>
+          <div class='trainer-info-field'>
+            <span>Name</span><span><input
                 type='text'
-              /></div>
-            <div class='trainer-info-field flexrow'><span>Novice</span><input
-                type='text'
-              /></div>
+                value='{{actor.name}}'
+                class='text-box'
+                name='name'
+                data-type='String'
+                placeholder='What is your name?'
+              /></span>
           </div>
-          <div class='background-skills-down flexcol trainer-info-field'>
-            <div class='flexrow'><span>Pathetic</span><input
-                type='text'
-              /></div>
-            <div class='flexrow'><input type='text' /><input
-                type='text'
-              /></div>
+        </li>
+        <li class='trainer-id'>
+          <div class='trainer-info-field'>
+            <span>ID No.</span><span>{{system.details.trainerID}}</span>
           </div>
+        </li>
+        <li class='trainer-bio'>
+          <div class='trainer-bio-field'>
+            <div class='head'><span>Sex:</span></div>
+            <span><input
+                type='text'
+                value='{{system.details.sex}}'
+                class='text-box'
+                name='system.details.sex'
+                data-type='String'
+                placeholder='M/F'
+              /></span>
+          </div>
+          <div class='trainer-bio-field'>
+            <span class='head'>Age:</span><span><input
+                type='text'
+                value='{{system.details.age}}'
+                class='text-box'
+                name='system.details.age'
+                data-type='String'
+                placeholder='####'
+              /></span>
+          </div>
+          <div class='trainer-bio-field'>
+            <span class='head'>Weight:</span><span><input
+                type='text'
+                value='{{system.details.weight}}'
+                class='text-box'
+                name='system.details.weight'
+                data-type='String'
+                placeholder='####'
+              /></span>
+          </div>
+          <div class='trainer-bio-field'>
+            <span class='head'>Height:</span><span><input
+                type='text'
+                value='{{system.details.height}}'
+                class='text-box'
+                name='system.details.height'
+                data-type='String'
+                placeholder='####'
+              /></span>
+          </div>
+        </li>
+        <li class='trainer-money'>
+          <div class='trainer-info-field'>
+            <span>Money:</span><span><img
+                class='pokedollar-symbol'
+                src='systems/ptu/image/Pokémon_Dollar_sign.svg'
+                style='border: none; height: 11px'
+              />1,000,000</span>
+          </div>
+        </li>
+        <li class='trainer-pokedex'>
+          <div class='trainer-info-field'>
+            <span>Pokédex|</span>
+            <span>Seen: ###</span>
+            <Span>Caught: ###</Span>
+          </div>
+        </li>
+      </ul>
+      <section>
+        <div class='trainer-background'>
+          
+          <div class='trainer-background-name trainer-info-field'>
+            <span>Name:</span>
+            <input
+              type='text'
+              value='{{system.details.skillBackground.name}}'
+              class='text-box'
+              name='system.details.skillBackground.name'
+              data-type='String'
+              placeholder='Background Name'
+            />
+          </div>
+          <div class='trainer-background-skills'>
+            <div class='background-skills-up'>
+              <div class='trainer-info-field'>
+                <span>Adept</span>
+                <input
+                  type='text'
+                  value='{{system.details.skillBackground.adept}}'
+                  class='text-box'
+                  name='system.details.skillBackground.adept'
+                  data-type='String'
+                  placeholder='Adept Skill'
+                />
+              </div>
+              <div class='trainer-info-field'>
+                <span>Novice</span>
+                <input
+                  type='text'
+                  value='{{system.details.skillBackground.novice}}'
+                  class='text-box'
+                  name='system.details.skillBackground.novice'
+                  data-type='String'
+                  placeholder='Novice Skill'
+                /></div>
+            </div>
+            <div class='background-skills-down trainer-info-field'>
+              <div class='flexrow'>
+                <span>Pathetic</span>
+                <input
+                  type='text'
+                  value='{{system.details.skillBackground.pathetic.0}}'
+                  class='text-box'
+                  name='system.details.skillBackground.pathetic[0]'
+                  data-type='String'
+                  placeholder='Pathetic 1'
+                />
+              </div>
+              <div class='flexrow'>
+                <input
+                  type='text'
+                  value='{{system.details.skillBackground.pathetic.1}}'
+                  class='text-box'
+                  name='system.details.skillBackground.pathetic[1]'
+                  data-type='String'
+                  placeholder='Pathetic 2'
+                />
+                <input
+                  type='text'
+                  value='{{system.details.skillBackground.pathetic.2}}'
+                  class='text-box'
+                  name='system.details.skillBackground.pathetic[2]'
+                  data-type='String'
+                  placeholder='Pathetic 2'
+                /></div>
+            </div>
+          </div>
+          
         </div>
-      </div>
+      </section>
     </section>
-  </section>
-  <div>
-    <div class='trainer-stars flexrow'>
-      {{#each system.details.stars}}
-        <img
-          class='trainer-star'
-          src='systems/ptu/image/Trainer-Card/trainer-star.svg'
-        />
-      {{/each}}
-    </div>
-    <div class='trainer-picture tooltip'>
-      <span class='tooltipcontent'>
-        {{actor.name}}<br />
-        Src:
-        {{actor.img}}<br /><br />
-        Aspect Ratio: 1.69:1<br />
-        Image size: 270:160
-      </span>
-      <img class='trainer-picture' src='{{actor.img}}' data-edit='img' />
+    <div class='trainer-picture-star'>
+      <div class='trainer-stars'>
+        {{#each system.details.stars}}
+          <img
+            class='trainer-star'
+            src='systems/ptu/image/Trainer-Card/trainer-star.svg'
+          />
+        {{/each}}
+      </div>
+      <div class='trainer-picture tooltip'>
+        <span class='tooltipcontent'>
+          {{actor.name}}<br />
+          Src:
+          {{actor.img}}<br /><br />
+          Aspect Ratio: 1.69:1<br />
+          Image size: 270:160
+        </span>
+        <img class='trainer-picture' src='{{actor.img}}' data-edit='img' />
+      </div>
     </div>
   </div>
 
+</section>
+--}}
+
+<section class='trainer-card'>
+  <div class='card'>
+    <div class='left-side'>
+      <div class='trainer-info'>
+        <ul class='trainer-info-list'>
+          <li class='trainer-name'>
+            <div class='trainer-info-field'>
+              <span>Name:</span>
+              <input
+                type='text'
+                value='{{actor.name}}'
+                class='text-box'
+                name='name'
+                data-type='String'
+                placeholder='What is your name?'
+              />
+            </div>
+          </li>
+          <li class='trainer-id'>
+            <div class='trainer-info-field'>
+              <span>ID No.</span>
+              <span>{{system.details.trainerID}}</span>
+            </div>
+          </li>
+          <li class='trainer-bio'>
+            <div class='trainer-age trainer-bio-field'>
+              <span>Age:</span>
+              <input
+                type='text'
+                value='{{system.details.age}}'
+                class='text-box'
+                name='system.details.age'
+                data-type='String'
+                placeholder='###'
+              />
+            </div>
+            <div class='trainer-sex trainer-bio-field'>
+              <span>Sex:</span>
+              <input
+                type='text'
+                value='{{system.details.sex}}'
+                class='text-box'
+                name='system.details.sex'
+                data-type='String'
+                placeholder='M/F'
+              />
+            </div>
+            <div class='trainer-height trainer-bio-field'>
+              <span>Height:</span>
+              <input
+                type='text'
+                value='{{system.details.height}}'
+                class='text-box'
+                name='system.details.height'
+                data-type='String'
+                placeholder='###'
+              />
+            </div>
+            <div class='trainer-weight trainer-bio-field'>
+              <span>Weight:</span>
+              <input
+                type='text'
+                value='{{system.details.weight}}'
+                class='text-box'
+                name='system.details.weight'
+                data-type='String'
+                placeholder='###'
+              />
+            </div>
+          </li>
+          <li class='trainer-money'>
+            <div class='trainer-info-field'>
+              <span>Money:</span>
+              <span>
+                <img
+                  class='pokedollar-symbol'
+                  src='systems/ptu/image/Pokémon_Dollar_sign.svg'
+                  style='border: none; height: 11px'
+                />
+                <span>{{system.resources.currency.string}}</span>
+              </span>
+            </div>
+          </li>
+          <li class='trainer-pokedex'>
+            <div class='trainer-info-field'>
+              <span>Pokedex|</span>
+              <div>
+                <span>Seen:{{system.pokedex.numSeen}}</span>
+              </div>
+              <div>
+                <span>Caught:{{system.pokedex.numCaught}}</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class='trainer-background'>
+      </div>
+    </div>
+    <div class='right-side'>
+      <div class='trainer-stars'>
+      </div>
+      <div class='trainer-picture'>
+      </div>
+    </div>
+  </div>
 </section>

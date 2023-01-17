@@ -121,22 +121,23 @@
       },
       "human": {
         "details": {
-          "trainerID": null,
           "age": null,
           "sex": null,
           "height": null,
           "weight": null,
-          "physicalDescription": {
-            "value": ""
-          },
-          "biography": {
-            "value": ""
-          },
-          "personality": {
-            "value": ""
-          },
-          "goals": {
-            "value": ""
+          "bio": {
+            "physicalDescription": {
+              "value": ""
+            },
+            "biography": {
+              "value": ""
+            },
+            "personality": {
+              "value": ""
+            },
+            "goals": {
+              "value": ""
+            }
           }
         },
         "stats": {
@@ -234,7 +235,9 @@
     "trainer": {
       "templates": ["common", "human"],
       "details": {
-        "skillBackground": {
+        "trainerID": null,
+        "starRank": [null],
+        "background": {
           "name": "",
           "description": "",
           "adept": "",
@@ -245,8 +248,7 @@
           "milestone": 0,
           "dex": 0,
           "misc": 0
-        },
-        "star": [1, 2, 3, 4, 5]
+        }
       },
       "resources": {
         "ap": {
@@ -262,7 +264,14 @@
           "max": 10,
           "left": 10
         },
-        "currency": 0
+        "currency": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      "pokedex": {
+        "caught": [],
+        "seen": []
       }
     },
     "pokemon": {

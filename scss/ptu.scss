@@ -1,19 +1,19 @@
 // Add custom fonts by visiting and search https://fonts.google.com
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
+/*
 // Import utilities.
 @import 'utils/typography';
 @import 'utils/colors';
 @import 'utils/mixins';
 @import 'utils/variables';
-
-/* Global styles */
+*/
+/* Global styles *//*
 @import 'global/window';
 @import 'global/grid';
 @import 'global/flex';
 @import 'global/tooltips';
 
-/* Styles limited to ptu sheets */
+/* Styles limited to ptu sheets *//*
 .ptu {
   @import 'components/forms';
   @import 'components/resource';
@@ -30,5 +30,11 @@
   @import 'sheets/tabs';
   @import 'sheets/skills';
   @import 'sheets/stats';
+  @import 'sheets/trainer-card';
+}
+*/
+
+.ptu.sheet.actor {
+  @import 'sheets/sheet-navigation';
   @import 'sheets/trainer-card';
 }

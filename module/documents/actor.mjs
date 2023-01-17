@@ -3,6 +3,9 @@
  * @extends {Actor}
  */
 export class PTUActor extends Actor {
+  /**
+   * Set default info created when a new actor is made
+   */
   _preCreate(data, options, user) {
     super._preCreate(data, options, user);
     this.updateSource({
@@ -76,6 +79,10 @@ export class PTUActor extends Actor {
       // calculate evasion for (s)def and speed
 
       // adjust movement values by speed cs
+
+      // count pokemon for the pokedex
+      systemData.pokedex.numCaught = systemData.pokedex.caught.length;
+      systemData.pokedex.numSeen = systemData.pokedex.caught.length;
     }
 
     // skill management

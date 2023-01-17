@@ -13,7 +13,7 @@ export class PTUActorSheet extends ActorSheet {
     return mergeObject(super.defaultOptions, {
       classes: ['ptu', 'sheet', 'actor'],
       template: 'systems/ptu/templates/actor/actor-sheet.html',
-      width: 600,
+      width: 650,
       height: 770,
       tabs: [
         {

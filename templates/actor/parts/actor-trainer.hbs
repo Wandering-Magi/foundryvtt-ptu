@@ -1,3 +1,20 @@
-<div class="flexcol trainer-header">
+<div class="header-trainer">
+  {{!-- starts with the card itself --}}
   {{> "systems/ptu/templates/actor/parts/actor-trainer-card.hbs"}}
+
+  {{!-- editable fields --}}
+  <section class="trainer-details">
+    <nav class="sheet-navigation tabs" data-group="secondary">
+      <a class="item" data-tab="biography" data-group="secondary">{{ localize "PTU.TrainerBiography"}}</a>
+      <a class="item" data-tab="physicalDescription" data-group="secondary">{{ localize "PTU.TrainerDescription"}}</a>
+      <a class="item" data-tab="personality" data-group="secondary">{{ localize "PTU.TrainerPersonality"}}</a>
+      <a class="item" data-tab="goals" data-group="secondary">{{ localize "PTU.TrainerGoals"}}</a>
+    </nav>
+
+    {{!#each system.details.bio as |body tab|}}
+    <div class="tab {{tab}}" data-group="secondary" data-tab="{{tab}}">
+      {{editor biographyHTML target="system.details.bio.{{tab}}.value" button=true editable=editable engine="prosemirror" collaborate=false}}
+    </div>
+    {{!/each}}
+  </section>
 </div>

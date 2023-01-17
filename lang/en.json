@@ -22,5 +22,13 @@
   "PTU.StatFeat": "Stat Features",
   "PTU.StatLevel": "Stat Level",
 
-  "PTU.Add": "Add"
+  "PTU.Add": "Add",
+
+  "PTU.TrainerDescription": "Description",
+  "PTU.TrainerBiography": "Biography",
+  "PTU.TrainerPersonality": "Personality",
+  "PTU.TrainerGoals": "Goals",
+
+
+  "PTU.End": "End"
 }
