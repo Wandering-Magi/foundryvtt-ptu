@@ -12,5 +12,6 @@ export const preloadHandlebarsTemplates = async function () {
     'systems/ptu/templates/actor/parts/actor-stats-derived.hbs',
     'systems/ptu/templates/actor/parts/actor-trainer.hbs',
     'systems/ptu/templates/actor/parts/actor-trainer-card.hbs',
+    'systems/ptu/templates/actor/parts/card-skill-fragment.hbs',
   ]);
 };

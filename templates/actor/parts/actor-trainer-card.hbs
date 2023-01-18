@@ -188,7 +188,7 @@
               <input
                 type='text'
                 value='{{actor.name}}'
-                class='text-box'
+                class='text-box editable'
                 name='name'
                 data-type='String'
                 placeholder='What is your name?'
@@ -207,7 +207,7 @@
               <input
                 type='text'
                 value='{{system.details.age}}'
-                class='text-box'
+                class='text-box editable'
                 name='system.details.age'
                 data-type='String'
                 placeholder='###'
@@ -218,7 +218,7 @@
               <input
                 type='text'
                 value='{{system.details.sex}}'
-                class='text-box'
+                class='text-box editable'
                 name='system.details.sex'
                 data-type='String'
                 placeholder='M/F'
@@ -229,7 +229,7 @@
               <input
                 type='text'
                 value='{{system.details.height}}'
-                class='text-box'
+                class='text-box editable'
                 name='system.details.height'
                 data-type='String'
                 placeholder='###'
@@ -240,7 +240,7 @@
               <input
                 type='text'
                 value='{{system.details.weight}}'
-                class='text-box'
+                class='text-box editable'
                 name='system.details.weight'
                 data-type='String'
                 placeholder='###'
@@ -262,7 +262,7 @@
           </li>
           <li class='trainer-pokedex'>
             <div class='trainer-info-field'>
-              <span>Pokedex|</span>
+              <span>  Pokedex|</span>
               <div>
                 <span>Seen:{{system.pokedex.numSeen}}</span>
               </div>
@@ -274,6 +274,41 @@
         </ul>
       </div>
       <div class='trainer-background'>
+        {{!> "systems/ptu/templates/actor/parts/card-skill-fragment.hbs"}}
+        <div class='background-name'>
+          <span>Name:</span>
+          <input
+            type='text'
+            value='{{system.details.background.name}}'
+            class='text-box editable'
+            name='system.details.background.name'
+            data-type='String'
+            placeholder='Name your background'
+          />
+        </div>
+        <div class='background-description editable' title='Background Description'>
+          <input
+            type='text'
+            value='{{system.details.background.description}}'
+            class='text-box bkrnd-info-field'
+            name='system.details.background.description'
+            data-type='String'
+            placeholder='What is it about?'
+          />
+        </div>
+        <div class="skills-up">
+          <div class='adept-skill bkrnd-info-field editable' title="Adept Skill">
+            {{> "systems/ptu/templates/actor/parts/card-skill-fragment.hbs"}}
+          </div>
+          <div class='novice-skill bkrnd-info-field editable' title="Novice Skill">
+            {{> "systems/ptu/templates/actor/parts/card-skill-fragment.hbs"}}
+          </div>
+        </div>
+        <div class="pathetic-skills" title="Pathetic Skills">
+          {{> "systems/ptu/templates/actor/parts/card-skill-fragment.hbs"}}
+          {{> "systems/ptu/templates/actor/parts/card-skill-fragment.hbs"}}
+          {{> "systems/ptu/templates/actor/parts/card-skill-fragment.hbs"}}
+        </div>
       </div>
     </div>
     <div class='right-side'>
