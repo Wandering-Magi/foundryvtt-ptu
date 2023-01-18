@@ -1,111 +1,6 @@
-/*
-.header-trainer{
-
-  .card {
-    align-self: center;
-
-    .trainer-card {
-      background: no-repeat url('../image/Trainer-Card/maroon.svg');
-      min-width: 510px;
-      min-height: 315px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-
-      ul.trainer-info {
-        width: 250px;
-        list-style: none;
-        li.trainer-name .trainer-info-field {
-          margin-top: 40px;
-        }
-        li div.trainer-info-field {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-        }
-      }
-      div.trainer-info-field {
-        background-color: #c0c0c0cc;
-        margin-top: 3px;
-        height: 20px;
-        border-radius: 3px;
-        border-bottom-style: double;
-        border-bottom-width: 4px;
-
-        input[type='text'] {
-          border: none;
-          background: none;
-          text-align: right;
-          font-weight: bold;
-          height: min-content;
-        }
-      }
-
-      li.trainer-bio {
-        display: flex;
-        margin-top: 3px;
-
-        .trainer-bio-field {
-          background-color: #c0c0c0cc;
-          border-radius: 3px;
-          border-bottom-style: double;
-          margin-inline: 1px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .head {
-          background: #cdcdcdcc;
-          width: -webkit-fill-available;
-          text-align: center;
-          border-top-left-radius: 3px;
-          border-top-right-radius: 3px;
-          border-bottom-style: groove;
-        }
-
-        input[type='text'] {
-          background: none;
-          border: none;
-          text-align: center;
-          height: min-content;
-        }
-      }
-
-      .trainer-background {
-        width: 300px;
-        margin-left: 20px;
-      }
-
-      .trainer-stars {
-        margin-right: 14px;
-        margin-top: 3px;
-        height: 25px;
-      }
-      .trainer-star {
-        border: none;
-        height: 30px;
-      }
-
-      img.trainer-picture {
-        height: 270px;
-        width: 160px;
-        margin-right: 14px;
-        border: double;
-        border-color: #a9a9a950;
-        border-radius: 8px;
-      }
-    }
-
-  }
-  .trainer-bio input.text-box {
-  }
-
-}
-*/
-
 .trainer-card {
   height: 400px;
+  width: 634px;
 
   .card {
     /* Card Background raw is 634x400px */
@@ -123,14 +18,13 @@
       flex-direction: column;
       justify-content: flex-start;
 
-      .editable:hover{
-        background-color:#473d8b44 !important; 
+      .editable:hover {
+        background-color: #473d8b44 !important;
       }
 
       .trainer-info-list {
         list-style: none;
         margin-top: 60px;
-      
 
         .trainer-info-field {
           display: flex;
@@ -144,7 +38,7 @@
           display: flex;
         }
 
-        .trainer-bio-field + .trainer-bio-field{
+        .trainer-bio-field + .trainer-bio-field {
           margin-left: 3px;
         }
 
@@ -157,7 +51,7 @@
           justify-content: space-between;
           align-items: center;
 
-          span{
+          span {
             background-color: #ed0000cc;
             width: -webkit-fill-available;
             border-bottom: dimgrey groove;
@@ -166,7 +60,7 @@
             text-align: center;
           }
 
-          input[type='text']{
+          input[type='text'] {
             text-align: center !important;
           }
         }
@@ -192,7 +86,7 @@
             height: min-content;
           }
         }
-        span{
+        span {
           padding-inline: 3px;
         }
       }
@@ -202,28 +96,28 @@
         border-radius: 3px;
         border-style: ridge;
         //border-color:gold;
-        border-image: linear-gradient(gold, white)1;
+        border-image: linear-gradient(#f6e20fff, #b2861eff, #fff1aaff) 1;
         margin-top: 12px;
 
         margin-left: 20px;
-        width: 400px;
+        width: 375px;
 
         display: flex;
         align-items: stretch;
         flex-direction: column;
 
-        .background-name{
+        .background-name {
           background-color: #ed0000cc;
           border-bottom: dimgrey groove;
 
-          span{
+          span {
             padding-left: 3px;
           }
         }
 
         .background-name,
         .skills-up,
-        .pathetic-skills{
+        .pathetic-skills {
           display: flex;
           flex-direction: row;
           align-items: center;
@@ -232,17 +126,46 @@
           text-align: center;
         }
 
-        .pathetic-skills{
+        .pathetic-skills {
           flex-wrap: wrap;
         }
 
-        .bkrnd-info-field{
+        .bkrnd-info-field {
           width: -webkit-fill-available;
         }
 
-        input, select{
+        input,
+        select {
           border: none;
+          background: none;
           text-align: center;
+        }
+      }
+    }
+    .right-side {
+      width: 197px;
+      margin-top: 11px;
+      margin-right: 20px;
+
+      .trainer-stars {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+
+        .trainer-star {
+          height: 18px;
+          border: none;
+        }
+      }
+
+      .trainer-picture-area {
+        .trainer-picture {
+          height: 350px;
+          width: 197px;
+
+          border: double;
+          border-color: #c0c0c05c;
+          border-radius: 9px;
         }
       }
     }

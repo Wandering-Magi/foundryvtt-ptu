@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="200mm"
+   height="200mm"
+   viewBox="0 0 200 200"
    version="1.1"
    id="svg5"
    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
@@ -26,15 +26,26 @@
      inkscape:document-units="mm"
      showgrid="false"
      showguides="true"
-     inkscape:zoom="0.70710678"
-     inkscape:cx="386.78741"
-     inkscape:cy="506.28845"
+     inkscape:zoom="1"
+     inkscape:cx="358"
+     inkscape:cy="365"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="1912"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="layer1">
+    <sodipodi:guide
+       position="99.999063,207.26157"
+       orientation="1,0"
+       id="guide2985"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-105.88501,100.00094"
+       orientation="0,-1"
+       id="guide2987"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
   <defs
      id="defs2">
     <linearGradient
@@ -64,7 +75,7 @@
          id="stop11447" />
     </linearGradient>
     <filter
-       style="color-interpolation-filters:sRGB;"
+       style="color-interpolation-filters:sRGB"
        inkscape:label="Drop Shadow"
        id="filter5565"
        x="-0.049114006"
@@ -99,14 +110,51 @@
          result="composite2"
          id="feComposite5563" />
     </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter3167"
+       x="-0.029468403"
+       y="-0.030067338"
+       width="1.0589368"
+       height="1.0601347">
+      <feFlood
+         flood-opacity="0.584314"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood3157" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite3159" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="3"
+         result="blur"
+         id="feGaussianBlur3161" />
+      <feOffset
+         dx="0"
+         dy="0"
+         result="offset"
+         id="feOffset3163" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite3165" />
+    </filter>
   </defs>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(3.9668677,-45.619372)">
     <path
        sodipodi:type="star"
-       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:url(#linearGradient19211);fill-opacity:1;stroke-width:0.00786877;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1;filter:url(#filter5565)"
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:url(#linearGradient19211);fill-opacity:1;stroke-width:0.00786877;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1;filter:url(#filter3167)"
        id="path788"
        inkscape:flatsided="false"
        sodipodi:sides="5"
@@ -119,8 +167,8 @@
        inkscape:rounded="0"
        inkscape:randomized="0"
        d="m 45.064506,20.225799 44.935307,72.946173 85.565817,4.337667 -55.49016,65.277621 22.31593,82.71835 -79.230115,-32.60239 -71.7738179,46.78508 6.5232579,-85.427 -66.674585,-53.80358 83.261707,-20.1944 z"
-       inkscape:transform-center-x="0.00013505704"
-       inkscape:transform-center-y="-8.7868615"
-       transform="matrix(0.71510954,0.06553584,-0.06716159,0.7152585,72.035158,45.028727)" />
+       inkscape:transform-center-x="0.00016190975"
+       inkscape:transform-center-y="-10.475523"
+       transform="matrix(0.81140929,0.07813055,-0.07620594,0.85271729,61.008361,24.851569)" />
   </g>
 </svg>

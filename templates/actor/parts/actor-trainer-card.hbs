@@ -1,182 +1,3 @@
-{{!--<section class='card'>
-  <div class='trainer-card'>
-    <section class='trainer-info'>
-      <ul class='trainer-info'>
-        <li class='trainer-name'>
-          <div class='trainer-info-field'>
-            <span>Name</span><span><input
-                type='text'
-                value='{{actor.name}}'
-                class='text-box'
-                name='name'
-                data-type='String'
-                placeholder='What is your name?'
-              /></span>
-          </div>
-        </li>
-        <li class='trainer-id'>
-          <div class='trainer-info-field'>
-            <span>ID No.</span><span>{{system.details.trainerID}}</span>
-          </div>
-        </li>
-        <li class='trainer-bio'>
-          <div class='trainer-bio-field'>
-            <div class='head'><span>Sex:</span></div>
-            <span><input
-                type='text'
-                value='{{system.details.sex}}'
-                class='text-box'
-                name='system.details.sex'
-                data-type='String'
-                placeholder='M/F'
-              /></span>
-          </div>
-          <div class='trainer-bio-field'>
-            <span class='head'>Age:</span><span><input
-                type='text'
-                value='{{system.details.age}}'
-                class='text-box'
-                name='system.details.age'
-                data-type='String'
-                placeholder='####'
-              /></span>
-          </div>
-          <div class='trainer-bio-field'>
-            <span class='head'>Weight:</span><span><input
-                type='text'
-                value='{{system.details.weight}}'
-                class='text-box'
-                name='system.details.weight'
-                data-type='String'
-                placeholder='####'
-              /></span>
-          </div>
-          <div class='trainer-bio-field'>
-            <span class='head'>Height:</span><span><input
-                type='text'
-                value='{{system.details.height}}'
-                class='text-box'
-                name='system.details.height'
-                data-type='String'
-                placeholder='####'
-              /></span>
-          </div>
-        </li>
-        <li class='trainer-money'>
-          <div class='trainer-info-field'>
-            <span>Money:</span><span><img
-                class='pokedollar-symbol'
-                src='systems/ptu/image/Pokémon_Dollar_sign.svg'
-                style='border: none; height: 11px'
-              />1,000,000</span>
-          </div>
-        </li>
-        <li class='trainer-pokedex'>
-          <div class='trainer-info-field'>
-            <span>Pokédex|</span>
-            <span>Seen: ###</span>
-            <Span>Caught: ###</Span>
-          </div>
-        </li>
-      </ul>
-      <section>
-        <div class='trainer-background'>
-          
-          <div class='trainer-background-name trainer-info-field'>
-            <span>Name:</span>
-            <input
-              type='text'
-              value='{{system.details.skillBackground.name}}'
-              class='text-box'
-              name='system.details.skillBackground.name'
-              data-type='String'
-              placeholder='Background Name'
-            />
-          </div>
-          <div class='trainer-background-skills'>
-            <div class='background-skills-up'>
-              <div class='trainer-info-field'>
-                <span>Adept</span>
-                <input
-                  type='text'
-                  value='{{system.details.skillBackground.adept}}'
-                  class='text-box'
-                  name='system.details.skillBackground.adept'
-                  data-type='String'
-                  placeholder='Adept Skill'
-                />
-              </div>
-              <div class='trainer-info-field'>
-                <span>Novice</span>
-                <input
-                  type='text'
-                  value='{{system.details.skillBackground.novice}}'
-                  class='text-box'
-                  name='system.details.skillBackground.novice'
-                  data-type='String'
-                  placeholder='Novice Skill'
-                /></div>
-            </div>
-            <div class='background-skills-down trainer-info-field'>
-              <div class='flexrow'>
-                <span>Pathetic</span>
-                <input
-                  type='text'
-                  value='{{system.details.skillBackground.pathetic.0}}'
-                  class='text-box'
-                  name='system.details.skillBackground.pathetic[0]'
-                  data-type='String'
-                  placeholder='Pathetic 1'
-                />
-              </div>
-              <div class='flexrow'>
-                <input
-                  type='text'
-                  value='{{system.details.skillBackground.pathetic.1}}'
-                  class='text-box'
-                  name='system.details.skillBackground.pathetic[1]'
-                  data-type='String'
-                  placeholder='Pathetic 2'
-                />
-                <input
-                  type='text'
-                  value='{{system.details.skillBackground.pathetic.2}}'
-                  class='text-box'
-                  name='system.details.skillBackground.pathetic[2]'
-                  data-type='String'
-                  placeholder='Pathetic 2'
-                /></div>
-            </div>
-          </div>
-          
-        </div>
-      </section>
-    </section>
-    <div class='trainer-picture-star'>
-      <div class='trainer-stars'>
-        {{#each system.details.stars}}
-          <img
-            class='trainer-star'
-            src='systems/ptu/image/Trainer-Card/trainer-star.svg'
-          />
-        {{/each}}
-      </div>
-      <div class='trainer-picture tooltip'>
-        <span class='tooltipcontent'>
-          {{actor.name}}<br />
-          Src:
-          {{actor.img}}<br /><br />
-          Aspect Ratio: 1.69:1<br />
-          Image size: 270:160
-        </span>
-        <img class='trainer-picture' src='{{actor.img}}' data-edit='img' />
-      </div>
-    </div>
-  </div>
-
-</section>
---}}
-
 <section class='trainer-card'>
   <div class='card'>
     <div class='left-side'>
@@ -184,26 +5,26 @@
         <ul class='trainer-info-list'>
           <li class='trainer-name'>
             <div class='trainer-info-field'>
-              <span>Name:</span>
+              <span>{{localize 'PTU.Name'}}:</span>
               <input
                 type='text'
                 value='{{actor.name}}'
                 class='text-box editable'
                 name='name'
                 data-type='String'
-                placeholder='What is your name?'
+                placeholder='{{localize "PTU.TrainerNamePlaceholder"}}'
               />
             </div>
           </li>
           <li class='trainer-id'>
             <div class='trainer-info-field'>
-              <span>ID No.</span>
+              <span>{{localize 'PTU.TrainerID'}}</span>
               <span>{{system.details.trainerID}}</span>
             </div>
           </li>
           <li class='trainer-bio'>
             <div class='trainer-age trainer-bio-field'>
-              <span>Age:</span>
+              <span>{{localize 'PTU.TrainerAge'}}:</span>
               <input
                 type='text'
                 value='{{system.details.age}}'
@@ -214,18 +35,18 @@
               />
             </div>
             <div class='trainer-sex trainer-bio-field'>
-              <span>Sex:</span>
+              <span>{{localize 'PTU.TrainerSex'}}:</span>
               <input
                 type='text'
                 value='{{system.details.sex}}'
                 class='text-box editable'
                 name='system.details.sex'
                 data-type='String'
-                placeholder='M/F'
+                placeholder='{{localize "PTU.TrainerSexPlaceholder"}}'
               />
             </div>
             <div class='trainer-height trainer-bio-field'>
-              <span>Height:</span>
+              <span>{{localize 'PTU.TrainerHeight'}}:</span>
               <input
                 type='text'
                 value='{{system.details.height}}'
@@ -236,7 +57,7 @@
               />
             </div>
             <div class='trainer-weight trainer-bio-field'>
-              <span>Weight:</span>
+              <span>{{localize 'PTU.TrainerWeight'}}:</span>
               <input
                 type='text'
                 value='{{system.details.weight}}'
@@ -249,72 +70,144 @@
           </li>
           <li class='trainer-money'>
             <div class='trainer-info-field'>
-              <span>Money:</span>
-              <span>
+              <span>{{localize 'PTU.Money'}}:</span>
+              <div>
                 <img
                   class='pokedollar-symbol'
                   src='systems/ptu/image/Pokémon_Dollar_sign.svg'
-                  style='border: none; height: 11px'
+                  style='border: none; height: 11px; margin-top: 5px;'
                 />
                 <span>{{system.resources.currency.string}}</span>
-              </span>
+              </div>
             </div>
           </li>
           <li class='trainer-pokedex'>
             <div class='trainer-info-field'>
-              <span>  Pokedex|</span>
+              <span>{{localize 'PTU.Pokedex'}}|</span>
               <div>
-                <span>Seen:{{system.pokedex.numSeen}}</span>
+                <span>{{localize
+                    'PTU.PokedexSeen'
+                  }}:{{system.pokedex.numSeen}}</span>
               </div>
               <div>
-                <span>Caught:{{system.pokedex.numCaught}}</span>
+                <span>{{localize
+                    'PTU.PokedexCaught'
+                  }}:{{system.pokedex.numCaught}}</span>
               </div>
             </div>
           </li>
         </ul>
       </div>
+      {{! 
+      <div class='card-selector'>
+        <span>Test String</span>
+      </div>}}
       <div class='trainer-background'>
         {{!> "systems/ptu/templates/actor/parts/card-skill-fragment.hbs"}}
         <div class='background-name'>
-          <span>Name:</span>
+          <span>{{localize 'PTU.Background'}}:</span>
           <input
             type='text'
             value='{{system.details.background.name}}'
             class='text-box editable'
             name='system.details.background.name'
             data-type='String'
-            placeholder='Name your background'
+            placeholder='{{localize "PTU.TrainerBackgroundPlaceholder"}}'
+            style='font-style: bold;'
           />
         </div>
-        <div class='background-description editable' title='Background Description'>
+        <div
+          class='background-description editable'
+          title='Background Description'
+        >
           <input
             type='text'
             value='{{system.details.background.description}}'
             class='text-box bkrnd-info-field'
             name='system.details.background.description'
             data-type='String'
-            placeholder='What is it about?'
+            placeholder='{{localize "PTU.TrainerBackgroundDescPlaceholder"}}'
+            style='font-style: italic; background-color: #c0c0c0cc;'
           />
         </div>
-        <div class="skills-up">
-          <div class='adept-skill bkrnd-info-field editable' title="Adept Skill">
-            {{> "systems/ptu/templates/actor/parts/card-skill-fragment.hbs"}}
+        <div class='skills-up'>
+          <div
+            class='adept-skill bkrnd-info-field editable'
+            title='Adept Skill'
+          >
+            <select
+              class='bkrnd-info-field skill-select skill-select editable'
+              name='system.details.background.adept'
+            >
+              {{#select system.details.background.adept}}
+                <option value='0' selected disabled hidden>
+                  {{localize 'PTU.BackgroundSkillSelectPlaceholder'}}
+                </option>
+                {{#each system.skills as |s key|}}
+                  <option value='{{key}}'>{{s.label}}</option>
+                {{/each}}
+              {{/select}}
+            </select>
           </div>
-          <div class='novice-skill bkrnd-info-field editable' title="Novice Skill">
-            {{> "systems/ptu/templates/actor/parts/card-skill-fragment.hbs"}}
+          <div
+            class='novice-skill bkrnd-info-field editable'
+            title='Novice Skill'
+          >
+            <select
+              class='bkrnd-info-field skill-select editable'
+              name='system.details.background.novice'
+            >
+              {{#select system.details.background.novice}}
+                <option value='0' selected disabled hidden>
+                  {{localize 'PTU.BackgroundSkillSelectPlaceholder'}}
+                </option>
+                {{#each system.skills as |s key|}}
+                  <option value='{{key}}'>{{s.label}}</option>
+                {{/each}}
+              {{/select}}
+            </select>
           </div>
         </div>
-        <div class="pathetic-skills" title="Pathetic Skills">
-          {{> "systems/ptu/templates/actor/parts/card-skill-fragment.hbs"}}
-          {{> "systems/ptu/templates/actor/parts/card-skill-fragment.hbs"}}
-          {{> "systems/ptu/templates/actor/parts/card-skill-fragment.hbs"}}
+        <div class='pathetic-skills' title='Pathetic Skills'>
+          {{#each system.details.background.pathetic}}
+            <select
+              class='bkrnd-info-field skill-select editable'
+              name='system.details.background.pathetic.{{@index}}'
+            >
+              {{#select this}}
+                <option value='' selected disabled hidden>
+                  {{localize 'PTU.BackgroundSkillSelectPlaceholder'}}
+                </option>
+                {{#each @root.system.skills as |s key|}}
+                  <option value='{{key}}'>{{s.label}}</option>
+                {{/each}}
+              {{/select}}
+            </select>
+          {{/each}}
         </div>
       </div>
     </div>
     <div class='right-side'>
-      <div class='trainer-stars'>
+      <div class='trainer-stars tooltip'>
+        <span class='tooltipcontent'>
+          {{localize 'PTU.Level'}}:
+          {{system.level.value}}
+        </span>
+        {{#each system.details.stars}}
+          <img
+            class='trainer-star'
+            src='systems/ptu/image/Trainer-Card/trainer-star.svg'
+          />
+        {{/each}}
       </div>
-      <div class='trainer-picture'>
+      <div class='trainer-picture-area tooltip'>
+        <span class='tooltipcontent'>
+          {{actor.name}}<br />
+          src={{actor.img}}<br /><br />
+          16:9<br />
+          {{localize 'PTU.TrainerFinalImage'}}: 350 x 197 px
+        </span>
+        <img class='trainer-picture' src='{{actor.img}}' data-edit='img' />
       </div>
     </div>
   </div>

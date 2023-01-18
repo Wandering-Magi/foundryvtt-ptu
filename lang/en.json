@@ -1,7 +1,14 @@
 {
+  "PTU.": "",
+  "PTU.Pokedex": "Pokédex",
+  "PTU.PokedexSeen": "Seen",
+  "PTU.PokedexCaught": "Caught",
   "PTU.Trainer": "Trainer",
+  "PTU.Name": "Name",
   "PTU.TrainerName": "Trainer Name",
   "PTU.Level": "Level",
+  "PTU.Add": "Add",
+  "PTU.Money": "Money",
 
   "PTU.Summary": "Summary",
   "PTU.Abilities": "Abilities",
@@ -22,13 +29,22 @@
   "PTU.StatFeat": "Stat Features",
   "PTU.StatLevel": "Stat Level",
 
-  "PTU.Add": "Add",
-
+  "PTU.TrainerNamePlaceholder": "What is your name?",
+  "PTU.TrainerID": "ID No.",
+  "PTU.TrainerWeight": "Weight",
+  "PTU.TrainerHeight": "Height",
+  "PTU.TrainerAge": "Age",
+  "PTU.TrainerSex": "Sex",
+  "PTU.TrainerSexPlaceholder": "M/F",
+  "PTU.Background": "Background",
+  "PTU.TrainerBackgroundPlaceholder": "Name your background.",
+  "PTU.TrainerBackgroundDescPlaceholder": "What is it about?",
+  "PTU.BackgroundSkillSelectPlaceholder": "Pick a skill",
   "PTU.TrainerDescription": "Description",
   "PTU.TrainerBiography": "Biography",
   "PTU.TrainerPersonality": "Personality",
   "PTU.TrainerGoals": "Goals",
-
+  "PTU.TrainerFinalImage": "Final Image",
 
   "PTU.End": "End"
 }

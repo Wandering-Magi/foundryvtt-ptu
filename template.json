@@ -242,7 +242,11 @@
           "description": "",
           "adept": "",
           "novice": "",
-          "pathetic": ["", "", ""]
+          "pathetic": {
+            "0": "",
+            "1": "",
+            "2": ""
+          }
         },
         "exp": {
           "milestone": 0,

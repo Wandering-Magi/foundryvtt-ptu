@@ -7,13 +7,13 @@
 @import 'utils/mixins';
 @import 'utils/variables';
 */
-/* Global styles *//*
+/* Global styles */ /*
 @import 'global/window';
 @import 'global/grid';
 @import 'global/flex';
 @import 'global/tooltips';
 
-/* Styles limited to ptu sheets *//*
+/* Styles limited to ptu sheets */ /*
 .ptu {
   @import 'components/forms';
   @import 'components/resource';
@@ -33,6 +33,7 @@
   @import 'sheets/trainer-card';
 }
 */
+@import 'global/tooltips';
 
 .ptu.sheet.actor {
   @import 'sheets/sheet-navigation';
