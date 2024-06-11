@@ -1,23 +1,23 @@
-export const PTU = {};
+// export const BOILERPLATE = {};
 
-/**
- * The set of Ability Scores used within the sytem.
- * @type {Object}
- */
- PTU.abilities = {
-  "str": "PTU.AbilityStr",
-  "dex": "PTU.AbilityDex",
-  "con": "PTU.AbilityCon",
-  "int": "PTU.AbilityInt",
-  "wis": "PTU.AbilityWis",
-  "cha": "PTU.AbilityCha"
-};
+// /**
+//  * The set of Ability Scores used within the sytem.
+//  * @type {Object}
+//  */
+//  BOILERPLATE.abilities = {
+//   "str": "BOILERPLATE.AbilityStr",
+//   "dex": "BOILERPLATE.AbilityDex",
+//   "con": "BOILERPLATE.AbilityCon",
+//   "int": "BOILERPLATE.AbilityInt",
+//   "wis": "BOILERPLATE.AbilityWis",
+//   "cha": "BOILERPLATE.AbilityCha"
+// };
 
-PTU.abilityAbbreviations = {
-  "str": "PTU.AbilityStrAbbr",
-  "dex": "PTU.AbilityDexAbbr",
-  "con": "PTU.AbilityConAbbr",
-  "int": "PTU.AbilityIntAbbr",
-  "wis": "PTU.AbilityWisAbbr",
-  "cha": "PTU.AbilityChaAbbr"
-};
+// BOILERPLATE.abilityAbbreviations = {
+//   "str": "BOILERPLATE.AbilityStrAbbr",
+//   "dex": "BOILERPLATE.AbilityDexAbbr",
+//   "con": "BOILERPLATE.AbilityConAbbr",
+//   "int": "BOILERPLATE.AbilityIntAbbr",
+//   "wis": "BOILERPLATE.AbilityWisAbbr",
+//   "cha": "BOILERPLATE.AbilityChaAbbr"
+// };

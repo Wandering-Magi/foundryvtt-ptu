@@ -1,61 +1,45 @@
-// Import document classes.
-import { PTUActor } from './documents/actor.mjs';
-import { PTUItem } from './documents/item.mjs';
-// Import sheet classes.
-import { PTUActorSheet } from './sheets/actor-sheet.mjs';
-import { PTUItemSheet } from './sheets/item-sheet.mjs';
-// Import helper/utility classes and constants.
-import { preloadHandlebarsTemplates } from './helpers/templates.mjs';
-import { PTU } from './helpers/config.mjs';
+/*
+'
+██████╗ ████████╗██╗   ██╗
+██╔══██╗╚══██╔══╝██║   ██║
+██████╔╝   ██║   ██║   ██║
+██╔═══╝    ██║   ██║   ██║
+██║        ██║   ╚██████╔╝
+╚═╝        ╚═╝    ╚═════╝ '
+*/
+
+// // Import document classes.
+import { PTUActor } from "./documents/actor.mjs";
+import { TrainerData } from "./documents/actor.mjs";
+// // Import sheet classes.
+// import { PtuActorSheet } from "./sheets/actor-sheet.mjs";
+// // Import helper/utility classes and constants.
+// import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
+// import { PTU } from "./helpers/config.mjs";
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
 /* -------------------------------------------- */
 
-Hooks.once('init', async function () {
+Hooks.once("init", async function () {
+  CONFIG.Actor.dataModels.Trainer = TrainerData;
+  CONFIG.Actor.documentClass = PTUActor;
   // Add utility classes to the global game object so that they're more easily
   // accessible in global contexts.
-  game.ptu = {
-    PTUActor,
-    PTUItem,
-    rollItemMacro,
-  };
-
-  // Add custom constants for configuration.
-  CONFIG.PTU = PTU;
-
-  PTU.trainerCardInfo = [
-    'actor.name',
-    'details.trainerID',
-    'details.age',
-    'details.sex',
-    'details.weight',
-    'details.height',
-    'resources.currency',
-    'pokedex',
-  ];
-
-  /**
-   * Set an initiative formula for the system
-   * @type {String}
-   */
-  CONFIG.Combat.initiative = {
-    formula: '1d20 + @stats.speed.adjusted',
-    decimals: 2,
-  };
-
-  // Define custom Document classes
-  CONFIG.Actor.documentClass = PTUActor;
-  CONFIG.Item.documentClass = PTUItem;
-
-  // Register sheet application classes
-  Actors.unregisterSheet('core', ActorSheet);
-  Actors.registerSheet('ptu', PTUActorSheet, { makeDefault: true });
-  Items.unregisterSheet('core', ItemSheet);
-  Items.registerSheet('ptu', PTUItemSheet, { makeDefault: true });
-
-  // Preload Handlebars templates.
-  return preloadHandlebarsTemplates();
+  // game.ptu = {
+  //   PTUActor,
+  //   TrainerData,
+  //   TestData,
+  // };
+  // // Add custom constants for configuration.
+  // CONFIG.PTU = PTU;
+  // // Define custom Document classes
+  // CONFIG.Actor.systemDataModels.test = TestData;
+  // // Register sheet application classes
+  // Actors.unregisterSheet("core", ActorSheet);
+  // Actors.registerSheet("ptu", PtuActorSheet, { makeDefault: true });
+  // // Preload Handlebars templates.
+  // return preloadHandlebarsTemplates();
 });
 
 /* -------------------------------------------- */
@@ -63,17 +47,17 @@ Hooks.once('init', async function () {
 /* -------------------------------------------- */
 
 // If you need to add Handlebars helpers, here are a few useful examples:
-Handlebars.registerHelper('concat', function () {
-  var outStr = '';
+Handlebars.registerHelper("concat", function () {
+  var outStr = "";
   for (var arg in arguments) {
-    if (typeof arguments[arg] != 'object') {
+    if (typeof arguments[arg] != "object") {
       outStr += arguments[arg];
     }
   }
   return outStr;
 });
 
-Handlebars.registerHelper('toLowerCase', function (str) {
+Handlebars.registerHelper("toLowerCase", function (str) {
   return str.toLowerCase();
 });
 
@@ -81,9 +65,9 @@ Handlebars.registerHelper('toLowerCase', function (str) {
 /*  Ready Hook                                  */
 /* -------------------------------------------- */
 
-Hooks.once('ready', async function () {
+Hooks.once("ready", async function () {
   // Wait to register hotbar drop hook on ready so that modules could register earlier if they want to
-  Hooks.on('hotbarDrop', (bar, data, slot) => createItemMacro(data, slot));
+  Hooks.on("hotbarDrop", (bar, data, slot) => createItemMacro(data, slot));
 });
 
 /* -------------------------------------------- */
@@ -99,10 +83,10 @@ Hooks.once('ready', async function () {
  */
 async function createItemMacro(data, slot) {
   // First, determine if this is a valid owned item.
-  if (data.type !== 'Item') return;
-  if (!data.uuid.includes('Actor.') && !data.uuid.includes('Token.')) {
+  if (data.type !== "Item") return;
+  if (!data.uuid.includes("Actor.") && !data.uuid.includes("Token.")) {
     return ui.notifications.warn(
-      'You can only create macro buttons for owned Items'
+      "You can only create macro buttons for owned Items"
     );
   }
   // If it is, retrieve it based on the uuid.
@@ -116,10 +100,10 @@ async function createItemMacro(data, slot) {
   if (!macro) {
     macro = await Macro.create({
       name: item.name,
-      type: 'script',
+      type: "script",
       img: item.img,
       command: command,
-      flags: { 'ptu.itemMacro': true },
+      flags: { "ptu.itemMacro": true },
     });
   }
   game.user.assignHotbarMacro(macro, slot);
@@ -134,7 +118,7 @@ async function createItemMacro(data, slot) {
 function rollItemMacro(itemUuid) {
   // Reconstruct the drop data so that we can load the item.
   const dropData = {
-    type: 'Item',
+    type: "Item",
     uuid: itemUuid,
   };
   // Load the item from the uuid.

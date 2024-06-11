@@ -1,12 +1,12 @@
 {
   "id": "ptu",
-  "title": "Pokemon Tabletop United",
-  "description": "The Pokemon Tabletop United system for FoundryVTT!",
-  "version": "0.1.0",
+  "title": "Pokemon tabletop United",
+  "description": "The PTU system for FoundryVTT!",
+  "version": "1.0.0",
   "compatibility": {
-    "minimum": 10,
-    "verified": "10.287",
-    "maximum": 10
+    "minimum": 11,
+    "verified": "11.313",
+    "maximum": 11
   },
   "authors": [
     {
@@ -27,7 +27,6 @@
   "gridDistance": 1,
   "gridUnits": "m",
   "primaryTokenAttribute": "health",
-  "secondaryTokenAttribute": null,
   "url": "",
   "manifest": "",
   "download": "",
